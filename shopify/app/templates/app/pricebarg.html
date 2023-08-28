@@ -1,0 +1,174 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Product Detail{% endblock title %}
+{% block main-content %}
+<style>
+.size1{
+    display: flex;
+    margin-left: 17%;
+}
+.leftside{
+    height: 40vw;
+    width: 24vw;
+    background-color: #e5e5e5;
+}
+.text1{
+    margin-top: 2%;
+    margin-left: 7vw;
+}
+.text2{
+    margin-top: 1.2%;
+    margin-left: 11vw;
+}
+.rightside{
+    height: 70vw;
+    width: 42vw;
+
+}
+.image{
+    padding-left: 1.8vw;
+}
+
+.details h3{
+    margin-left: 3vw;
+    color: blue;
+}
+.details h2{
+    margin-left: 2.5vw;
+    color: red;
+}
+#submitButton {
+    
+        padding: 1.04% 4% ;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    #chatbox {
+
+        font-size: 1.2rem;
+        height: 740px;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    #userInput{
+        border: #4CAF50;
+        margin-left: 2%;
+        padding-right: 62%;
+        padding-left: 4%;
+        padding-top: 1.2%;
+        padding-bottom: 1.2%;
+    }
+    .bot{
+      height: 40px;
+      width:900px;
+      padding-bottom: 10px;
+    }
+    #sendMessage{
+      height: 40px;
+      width: 80px;
+    }
+
+</style>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Sorry for the Interuption ! </strong> This page is still in production ,you are requested to visit our other pages . we will make it work very soon .
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div class="size1">
+<div class="leftside">
+    <h3 class="text1">
+        Product Details
+    </h3>
+    <hr>
+    <img class="image" src="{{product.product_image.url}}" alt="" class="img-fluid img-thumbnail">
+    <div class="details">
+    <h3>Product Name : {{product.title}} {{a}}</h3>
+    <h4>Brand Name : {{product.brand}}</h4>
+    <p>{{product.description}}</p>
+    <h2>Current Price - Rs. {{product.selling_price}} <small id="priceofproduct"  class="fw-light text-decoration-line-through">{{product.discounted_price}}</small></h2>
+    </div>
+</div>
+<div class="rightside">
+        <h3 class="text2">
+            Talk with our Chatbot and start Bargenning
+        </h3>
+        <hr>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Sorry !</strong> The Bot is still in production ,you are requested to visit our other pages .
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div id="chatbox"></div>
+        
+
+        <input type="text" class="bot" id="userMessage" placeholder="Type your message...">
+
+        <button type="button" id="sendMessage" class="btn btn-success ">Send </button>
+
+
+
+</div>
+</div>
+<script>
+    const chatbox = document.getElementById('chatbox');
+    const userMessageInput = document.getElementById('userMessage');
+    const sendMessageBtn = document.getElementById('sendMessage');
+  
+    function displayMessage(text, sender) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${sender}`;
+      messageDiv.textContent = text;
+      chatbox.appendChild(messageDiv);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+  
+    let productPrice = parseFloat(document.getElementById('priceofproduct').textContent);
+    const predefinedResponses = {
+      'hello': ["Hello! How can I assist you today?", "Hey there! What can I help you with?", "Hi! How can I make your day better?"],
+      'who are you': ["I'm your friendly virtual assistant!", "I'm here to help you with anything you need.", "I'm ChatBot, at your service!"],
+      'how would you help me': ["I can assist you with product information, answer your questions, and more.", "I'm here to provide information and support for your needs.", "I'm your go-to for all things assistance and information!"],
+      'bye': ["Goodbye! Don't hesitate to return if you have more questions.", "Farewell! If you need anything else, I'll be here.", "See you later! Feel free to come back anytime."],
+      'default': ["I'm sorry, I don't understand that. Can you please rephrase?", "I'm still learning. Could you try asking that in a different way?", "Hmm, let's talk about something else. What's on your mind?"],
+
+    };
+  
+    function getResponse(userMessage) {
+      userMessage = userMessage.toLowerCase();
+      for (const keyword in predefinedResponses) {
+        if (userMessage.includes(keyword)) {
+          const responses = predefinedResponses[keyword];
+          const randomIndex = Math.floor(Math.random() * responses.length);
+          return responses[randomIndex];
+        }
+      }
+      if (userMessage.includes('price of product')) {
+        return `The price of the product is $${productPrice}.`;
+      }
+      return predefinedResponses['default'][Math.floor(Math.random() * predefinedResponses['default'].length)];
+    }
+  
+    function sendMessage() {
+      const userMessage = userMessageInput.value;
+      displayMessage(`You: ${userMessage}`, 'sent');
+      userMessageInput.value = '';
+  
+      const botResponse = getResponse(userMessage);
+      displayMessage(`Bot: ${botResponse}`, 'received');
+    }
+
+    userMessageInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          sendMessage();
+        }
+      });
+    sendMessageBtn.addEventListener('click', sendMessage);
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+
+
+{% endblock main-content %}
+
+

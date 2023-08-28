@@ -1,0 +1,462 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Moblie{% endblock title %}
+{% block main-content %}
+<style>
+  .box1 {
+    margin-top: 0;
+    height: 400px;
+    background-color: rgb(247, 246, 246);
+  }
+
+  .box2 {
+    margin-top: 0.4%;
+    margin-left: 14%;
+    margin-right: 14%;
+    background-image: url('{% static 'app/images/blog/blogpic3.jpg' %}');
+    height: 84%;
+    border-radius: 40px;
+    border: 1px solid rgb(123, 191, 236);
+
+  }
+
+  .box2 img {
+    position: absolute;
+    margin-top: 1.2%;
+    margin-left: 2%;
+  }
+
+  .box2 h6 {
+    display: block;
+    margin-left: 50px;
+  }
+
+  .text2 {
+    margin-left: 37%;
+  }
+
+  .text1 h5 {
+    margin-left: 400px;
+  }
+
+  .text1 h2 {
+    margin-top: 2%;
+    margin-left: 400px;
+  }
+
+  .text1 hr {
+    margin-left: 20%;
+  }
+
+  .contentpage {
+    height: 800px;
+    width: 100%;
+    display: flex;
+  }
+
+  .righttext {
+    height: 100%;
+    width: 49%;
+    background-color: antiquewhite;
+  }
+
+  .righttext h5 {
+    margin-top: 12%;
+    margin-left: 25%;
+  }
+
+  .righttext h1 {
+    margin-left: 25%;
+    margin-right: 26%;
+    font-weight: 540;
+    font-family: Means Web, Georgia, Times, Times New Roman, serif;
+
+  }
+
+  .righttext p {
+    margin-left: 25%;
+    font-size: 1.4rem;
+  }
+
+  #homebutton {
+    margin-left: 25%;
+  }
+
+  .leftimg {
+    height: 100%;
+    width: 51%;
+  }
+
+  /* Starting of blog content */
+  .blogcontent {
+
+    margin-top: 1%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  .footer {
+    height: 360px;
+    background-color: #241c15;
+  }
+
+  .footer h1 {
+    margin-top: 2%;
+    margin-left: 28%;
+    color: white;
+    font-weight: 400;
+    font-family: Means Web, Georgia, Times, Times New Roman, serif;
+    font-size: 2.9rem
+  }
+
+  .footer h2 {
+    margin-left: 38%;
+    color: white;
+    font-weight: 400;
+    font-family: Means Web, Georgia, Times, Times New Roman, serif;
+    font-size: 2.9rem
+  }
+
+  #fotterbutton {
+    margin-left: 46%;
+    margin-top: 20px;
+  }
+
+  .blogbox1 {
+    margin-left: 2%;
+    margin-bottom: 0.6%;
+    height: 250px;
+    width: 96%;
+    border-radius: 30px;
+    border: 1px solid black;
+  }
+
+  .blogbox2 {
+    display: flex;
+
+  }
+
+  .blogbox1 h2 {
+    margin-left: 2%;
+    margin-top: 1%;
+    font-family: Means Web, Georgia, Times, Times New Roman, serif;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .blogbox1 h4 {
+    margin-left: 2%;
+    margin-right: 27%;
+    margin-top: 1%;
+    font-family: Means Web, Georgia, Times, Times New Roman, serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    
+  }
+
+  .blogimage {
+    margin-left: 48.5%;
+    margin-top: 0.7%;
+    position: absolute;
+  }
+  .buttons{
+    margin-top: 1%;
+    margin-left: 50px;
+    position: absolute;
+    display: flex;
+  }
+  #btn2{
+    margin-left: 20px;
+  }
+  .blogbackground{
+    background-image: url({% static 'app/images/blog/blogbg2.jpg'%});
+  }
+  .blogcontent{
+
+    margin-top: 0;
+  }
+  .datetime{
+    margin-top: 7px;
+    margin-left: 100px;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  
+
+
+/* Media Query for Mobiles */
+@media (max-width: 1800px) {
+  .blogimage{
+    display: none;
+  }
+  .righttext{
+    width: 100%;
+
+  }
+  {% comment %} .righttext{
+    display: block;
+  } {% endcomment %}
+  .leftimg{
+    display: none;
+  }
+}
+@media (max-width: 1455px) {
+  .blogcontent h4{
+    font-size: 0.9rem;
+  }
+  .footer h1{
+    margin-left: 200px;
+  }
+
+}
+@media (max-width: 1267px) {
+  .blogcontent h4{
+    font-size: 0.6rem;
+  }
+  .datetime{
+    display: none;
+  }
+  .blogbox1 {
+    margin-left: 2%;
+    margin-bottom: 0.6%;
+    height: 210px;
+    width: 96%;
+
+  }
+.footer h1{
+    font-size: 1.7rem;
+    margin-left:  90px;
+  } 
+.footer h2{
+
+    margin-left:  140px;
+  } 
+  #fotterbutton{
+    margin-left: 320px;
+  }
+  .contentpage{
+    height: 600px;
+  }
+  .text2{
+    font-size: 1.7rem;
+    margin-left: 79px;
+  }
+  .text1 h5 {
+    display: none;
+  }
+  .box2 img {
+    position: absolute;
+    margin-top: 7.2%;
+    margin-left: 17%;
+}
+.text1 h2 {
+  /* margin-top: 2%; */
+  /* margin-left: 400px; */
+  display: none;
+}
+}
+@media (max-width: 700px) {
+  .blogcontent h4 {
+    font-size: 0.55rem;
+}
+.footer {
+  height: 277px;
+  background-color: #241c15;
+}
+.footer h1 {
+  font-size: 1.7rem;
+  margin-left: 61px;
+}
+.footer h2 {
+  margin-left: 120px;
+}
+#fotterbutton {
+  margin-left: 284px;
+}
+}
+
+@media (max-width: 1267px) {
+  .righttext h5 {
+    margin-top: 4%;
+    margin-left: 30%;
+}
+.righttext h1 {
+  margin-left: 5%;
+  margin-right: 0%;
+  font-size: 1.5rem;
+}
+.righttext p {
+  margin-left: 13%;
+  font-size: 1rem;
+}
+.contentpage{
+  height: 340px;
+}
+.box2 {
+  margin-top: 0.4%;
+  margin-left: 2%;
+  margin-right: 2%;
+  height: 81%;
+  border-radius: 52px;
+}
+.box2 img {
+  position: absolute;
+  margin-top: 12.2%;
+  margin-left: 14%;
+}
+.text2 {
+  font-size: 1.4rem;
+  margin-left: 38px;
+}
+.blogcontent {
+  margin-top: 1%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.blogbox1 h2 {
+  margin-left: 2%;
+  margin-top: 1%;
+  font-family: Means Web, Georgia, Times, Times New Roman, serif;
+  /* font-size: 2rem; */
+  font-weight: 600;
+}
+.blogcontent h4 {
+  font-size: 0.5rem;
+}
+.buttons {
+  margin-top: 1%;
+  margin-left: 28px;
+  position: absolute;
+  /* display: flex; */
+}
+#btn2 {
+  margin-left: 19px;
+  height: 0px;
+  padding-bottom: 31px;
+}
+#fotterbutton {
+  margin-left: 176px;
+  margin-top: -4px;
+}
+}
+@media (max-width: 500px) {
+  .righttext h5 {
+    margin-top: 4%;
+    margin-left: 21%;
+}
+.righttext h1 {
+  margin-left: 5%;
+  margin-right: 0%;
+  font-size: 1.2rem;
+}
+.contentpage {
+  height: 294px;
+}
+.text2 {
+  font-size: 1.2rem;
+  margin-top: 1%;
+}
+.blogbox1 h2 {
+  margin-left: 4%;
+  margin-top: 1%;
+  font-size: 1.3rem;
+}
+.blogbox1 {
+  height: 192px;
+}
+.footer h1 {
+  font-size: 1.7rem;
+  margin-left: 10%;
+}
+.footer h2 {
+  margin-left: 5%;
+  font-size: 2rem;
+}
+#fotterbutton {
+  margin-left: 32%;
+  margin-top: 5px;
+}
+.footer {
+  height: 222px;
+}
+}
+
+
+</style>
+
+  <div class="contentpage">
+    <div class="righttext">
+      <h5>WelCome to shopify Blog</h5>
+      <h1>Read Learn Know from our Blog , read Your prefarable blog with shopify </h1>
+      <p>With 100+ distinctive and industry-specific email and landing page templates – as well as templates for content
+        creation – Mailchimp gives your team access to tools that can help meet your marketing objectives.</p>
+      <button type="button" id="homebutton" class="btn btn-primary btn-lg">Read the Blogs -></button>
+
+    </div>
+    <div class="leftimg">
+      <img src="{% static 'app/images/blog/blogpic2.jpg' %}" alt="">
+    </div>
+  </div>
+
+
+  <div class="box1">
+    .
+    <div class="box2">
+      <div><img src="{% static 'app/images/blog/blogpic1.png' %}" alt="">
+      </div>
+      <div class="text1">
+        <h1 class="text2">Welcome to Product Blog Page </h1>
+        <b>
+          <hr>
+        </b>
+        <h5>Read the leatest blog about our prooducts , read new offers . Different catagorris of blogs are available
+          including our product , brand , employe etc . Read , share and buy the product from our followig website if
+          you llike it . </h5>
+        <h2>Read Our Latest Blog - ( E-commerece products )</h2>
+      </div>
+    </div>
+  </div>
+<div class="blogbackground">
+  <div class="blogcontent">
+    <h2>Read the blogs --</h2>
+    {% for post in allPosts %}
+    <div class="blogbox1" style="background-color:rgb(255 255 255 / 57%);">
+      <div class="blogbox2">
+        <h2>Blog Title :{{post.title}}</h2>
+        <div class="blogimage">
+          <img src="{{post.image_small.url}}" alt="gfgfhgfg">
+        </div>
+      </div>
+      <h4><b>Content :</b> {{post.content  | truncatechars:530}} </h4>
+      <div class="buttons">
+      <a href="{% url 'blogdetails' post.slug %}" id="btn3" role="button" class="btn btn-primary">Continue reading</a>
+      <button type="button" id="btn2" class="btn btn-success btn-lg">More Blogs </button>
+      <div class="datetime">Date : {{post.timeStamp}} </div>
+    </div>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+
+  <div class="footer">
+    .
+    <h1>Millions of users trust us with their Blog Writting , </h1>
+    <h2 class="fottertext"> You can too , Let's Start</h2>
+    <button type="button" id="fotterbutton" class="btn btn-primary btn-lg">Get Started</button>
+    <!-- <button type="button" id="fotterbutton" class="btn btn-outline-primary btn-lg">Get Started</button>  -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+{% endblock main-content %}
+
+
+
+
+
+
+
+
+

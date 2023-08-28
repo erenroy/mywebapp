@@ -1,0 +1,263 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock title %}
+{% block main-content %}
+
+
+<style>
+    .content1 {
+      margin-top: 1%;
+      margin-left: 42.5%;
+      margin-bottom: 10px;
+    }
+  
+    .content2 {
+  
+      background-color: rgb(245 245 245);
+      margin-left: 300px;
+      margin-right: 300px;
+      border-radius: 10px;
+  
+    }
+  
+    .content3 {
+      display: flex;
+    }
+    .content4{
+      width: 65%;
+    }
+  
+  
+    .content2 h2 {
+      margin-top: 5px;
+      margin-left: 2%;
+      font-weight: 470;
+      font-family: Means Web, Georgia, Times, Times New Roman, serif;
+    }
+    .content4 h3{
+      margin-top: 10;
+      font-family: Means Web, Georgia, Times, Times New Roman, serif;
+    }
+    .content4 p{
+      margin-top: 10;
+      font-size: 1.2rem;
+      font-family: Means Web, Georgia, Times, Times New Roman, serif;
+    }
+    .content2 h1 {
+      margin-top: 5px;
+      font-weight: 570;
+      font-family: Means Web, Georgia, Times, Times New Roman, serif;
+    }
+    .content6 h1{
+      margin-left: 40%;
+    }
+    .content6 p{
+      margin-left: 4%;
+      margin-right: 4%;
+      font-size: 1.1rem;
+      font-family: Means Web, Georgia, Times, Times New Roman, serif;
+    }
+    .blogbox{
+      background-image: url("{% static 'app/images/blog/blogcontent2.jpg' %}");
+    }
+
+    /* Media Queries for Tablet and Mobile Devices */
+    @media (max-width: 768px) { /* Tablets and smaller */
+      .content1 {
+        margin-left: 20%;
+        margin-right: 20%;
+      }
+  
+      .content2 {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+  
+      .content3 {
+        flex-direction: column;
+      }
+  
+      .content4 {
+        width: 100%;
+        margin: 0;
+      }
+  
+      .content5 {
+        text-align: center;
+        margin-top: 10px;
+      }
+  
+      .content6 {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+  
+    @media (max-width: 576px) { /* Mobile devices */
+      .content1 {
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+  
+      .content2 {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+  
+      .content4 h1, .content4 h3 {
+        text-align: center;
+      }
+  
+      .content5 img.blogimg {
+        max-width: 100%;
+        height: auto;
+      }
+  
+      .content6 p {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+
+    /* Media Queries for Tablet and Mobile Devices */
+    @media (max-width: 768px) { /* Tablets and smaller */
+      .content1 {
+        margin-left: 20%;
+        margin-right: 20%;
+      }
+  
+      .content2 {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+  
+      .content3 {
+        flex-direction: column;
+      }
+  
+      .content4 {
+        width: 100%;
+        margin: 0;
+      }
+  
+      .content5 {
+        text-align: center;
+        margin-top: 10px;
+      }
+  
+      .content6 {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+
+    @media (max-width: 1636px) { /* Tablets and smaller */
+      .content1 {
+
+        margin-left: 20%;
+        margin-right: 20%;
+      }
+  
+
+      .content2 {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+  
+      .content3 {
+        flex-direction: column;
+      }
+  
+      .content4 {
+        width: 100%;
+        margin: 0;
+      }
+  
+      .content5 {
+        text-align: center;
+        margin-top: 10px;
+      }
+  
+      .content6 {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+  
+    @media (max-width: 576px) { /* Mobile devices */
+      .content1 {
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+  
+      .content2 {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+  
+      .content4 h1, .content4 h3 {
+        text-align: center;
+      }
+  
+      .content5 img.blogimg {
+        max-width: 100%;
+        height: auto;
+      }
+  
+      .content6 p {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+  </style>
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'app/images/blog/blog12.jpg' %}" class="d-block w-100" alt="Slide 1">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'app/images/blog/blog13.jpg' %}" class="d-block w-100" alt="Slide 2">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'app/images/blog/blog14.jpg' %}" class="d-block w-100" alt="Slide 3">
+      </div>
+    </div>
+  </div>
+
+<div class="blogbox"> 
+    <div class="content1">
+      <button type="button" class="btn btn-primary btn-lg">The content has been shown below </button>
+    </div>
+    <div class="content2">
+      .
+      <h2>From Shopify , Read the Blogs</h2>
+      <hr>
+      <div class="content3">
+        <div class="content4">
+          <h1>Title : {{post.title}}</h1>
+          <h3>Author Name : {{post.author}}</h3>
+          <h5>Date of Blog : {{post.timeStamp}} </h5>
+          <hr>
+          <p><b>About Our Blogs : </b>Welcome to our vibrant and captivating blogging platform! We are dedicated to providing a haven for writers, thinkers, and creatives to share their stories and ideas with the world. Our blogging website is a community-driven space, where diverse voices converge to inspire, engage, and provoke thought.
+  
+            Explore an array of topics, from personal anecdotes and travel experiences to tech insights and cultural commentary. Embrace the power of words and imagery as you connect with like-minded individuals and expand your horizons. Our user-friendly interface ensures seamless navigation, making it easy to discover captivating content.
+            
+            Whether you're a seasoned blogger or just getting started, our platform welcomes all with open arms. Join us on this journey of expression and discovery, where your voice finds its rightful place in the ever-expanding blogosphere. Start your blogging adventure today!</p>
+        </div>
+        <div class="content5">
+          <img class="blogimg" src="{{post.image.url}}" alt="">
+        </div>
+      </div>
+      <hr>
+      <div class="content6">
+        <h1>Content</h1>
+        <p>
+            {{post.content}}
+        </p>
+      </div>
+    </div>
+  </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+{% endblock main-content %}

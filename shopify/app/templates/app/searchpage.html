@@ -1,0 +1,62 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Search Page{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+    <h2>This are your search result ( Search by product name or brand )</h2>
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                {% for product in searchresult %}
+                <div class="col-md-4 col-sm-6 text-center mb-4">
+                    <a href="{% url 'product-detail' product.id %}" class="btn">
+                        <div class="item">
+                            <img src="{{product.product_image.url}}" alt="" class="img-fluid">
+                            <div class="fw-bold">{{product.title}}</div>
+                            <div class="fw-bold">{{product.discounted_price}}
+                                <small class="fw-light text-decoration-line-through">{{product.selling_price}}</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main-content %}
+
+
+
+
+
+{% comment %} original Code is down there {% endcomment %}
+
+{% comment %} {% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Search Page{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+    <h2>This are your search result ( Search by prouct name or brand )</h2>
+ <div class="row">
+    <div class="col-sm-12">
+        <div class="row">
+            {% for product in searchresult %}
+          <div class="col-sm-4 text-center mb-4">
+            <a href="{% url 'product-detail' product.id %}" class="btn">
+                <div class="item">
+                    <img src="{{product.product_image.url}}" alt="" height="300" class="">
+                    <div class="fw-bold">{{product.title}}</div>
+                    <div class="fw-bold">{{product.discounted_price}}
+                    <small class="fw-light text-decoration-line-through">{{product.selling_price}}</small></div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+     </div>
+    </div> 
+    </div>
+</div> 
+</div>
+{% endblock main-content %} {% endcomment %}

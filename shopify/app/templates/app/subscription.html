@@ -1,0 +1,137 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Search Page{% endblock title %}
+{% block main-content %}
+<style>
+    .subscription{
+        margin-top: 2%;
+        margin-left: 10%;
+        margin-bottom: 3%;
+    }
+    .subscription hr{
+        margin-right: 60%;
+    }
+    .background{
+        background-image: url("{% static 'app/images/buypage/buypage2.jpg' %}")
+    }
+</style>
+<div class="background">
+<div class="subscription">
+    <h2> Choose Your Plan for being Our Regular Customer </h2>
+    <b><hr></b>
+</div>
+<div class="container">
+<main>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Free</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>No Limitations for user numbers</li>
+              <li>No premium facelity</li>
+              <li>Email support</li>
+              <li>Help center access</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Primum</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Fast Delivery </li>
+              <li>Acess to the premium items </li>
+              <li>Help line support </li>
+              <li>Very Cupons</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Enterprise</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Delivery within 1 day </li>
+              <li>No delivery cost </li>
+              <li>Phone and email support</li>
+              <li>Acess to primum items </li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="display-6 text-center mb-4">Compare plans</h2>
+
+    <div class="table-responsive">
+      <table class="table text-center">
+        <thead>
+          <tr>
+            <th style="width: 34%;"></th>
+            <th style="width: 22%;">Free</th>
+            <th style="width: 22%;">Pro</th>
+            <th style="width: 22%;">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="text-start">Public</th>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>🗸</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>🗸</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>🗸</td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Private</th>
+            <td></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>🗸</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>🗸</td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr>
+            <th scope="row" class="text-start">Permissions</th>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>🗸</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>🗸</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>🗸</td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Sharing</th>
+            <td></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>🗸</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>🗸</td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Unlimited members</th>
+            <td></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>🗸</td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>🗸</td>
+          </tr>
+          <tr>
+            <th scope="row" class="text-start">Extra security</th>
+            <td></td>
+            <td></td>
+            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"></use></svg>🗸</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+</div>
+{% endblock main-content %}

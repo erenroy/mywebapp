@@ -1,0 +1,83 @@
+.nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.btns {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  display: none;
+}
+
+.btns::before {
+  content: '\f0c9';
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.nav ul li {
+  margin: lem;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  padding: 0.2rem 1.2rem 0.9rem 1.2rem;
+  border-radius: 10px 10px 0 0;
+  color: rgb(39 39 39);
+  transition: all .4s;
+  position: relative;
+  z-index: 1;
+}
+
+.nav ul li a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 41px;
+  border-radius: 10px 10px 0 0;
+  background: #853333;
+  transform-origin: bottom;
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  transform: scaleY(0.05);
+  z-index: -1;
+  transition: all .4s;
+}
+
+.nav ul li a:hover::before {
+  transform: scaleY(1.1);
+}
+
+.nav ul li a:hover {
+  color: white;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+  /* Add other dark mode styles here */
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6,
+.dark-mode p, .dark-mode a, .dark-mode li, .dark-mode span {
+  color: #e0cdcd; /* Change the text color to blue */
+}
+
+.navbar {
+  /* background-color: rgb(164 177 201); */
+  background-color: rgb(185 210 235);
+}
+.dark-mode {
+  background-color: black;
+  color: white;
+  /* Add other dark mode styles here */
+}
